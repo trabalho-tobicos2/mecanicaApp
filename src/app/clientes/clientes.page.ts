@@ -27,7 +27,7 @@ export class ClientesPage implements OnInit {
 
   async listar() {
     const loading = await this.loadingController.create({
-      message: 'Carregando'
+      message: 'Carregando Clientes ..'
     });
     loading.present();
     this.clienteService.getClientes().subscribe((data) => {

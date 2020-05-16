@@ -4,7 +4,7 @@ export interface Veiculo {
     placa: string;
     renavan: string;
     marca: string;
-    Cor: string;
-    Modelo: string;
+    cor: string;
+    modelo: string;
     Combustivel: string
 }

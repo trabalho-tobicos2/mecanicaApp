@@ -1,7 +1,6 @@
-import { BusyLoaderService } from './../services/busy-loader.service';
 import { VeiculoService } from './../services/veiculo.service';
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { Veiculo } from '../models/veiculo.interface';
 
 @Component({
@@ -15,7 +14,7 @@ export class VeiculosPage implements OnInit {
 
   constructor(
     private veiculoService : VeiculoService,
-    private busyLoader: BusyLoaderService,
+    private loadingController: LoadingController,
     private alertControler: AlertController
   ) { }
 
@@ -27,9 +26,40 @@ export class VeiculosPage implements OnInit {
   }
 
   async listar(){
-    const busyLoader = await this.busyLoader.create('Carregando veiculos...');
-
-    this.veiculos = await this.veiculoService.getVeiculos().toPromise();
-    busyLoader.dismiss();
+    const loading = await this.loadingController.create({
+      message: 'Carregando veiculos..'
+    });
+    loading.present();
+    this.veiculoService.getVeiculos().subscribe((data)=>{
+      this.veiculos = data;
+      loading.dismiss();
+    })
   }
+
+  async confirmarExclusao(veiculo: Veiculo) {
+    let alerta = await this.alertControler.create({
+      header: 'Confirmação de exclusão',
+      message: `Deseja excluir o Veiculo ${veiculo.descricao}?`,
+      buttons: [{
+        text: 'SIM',
+        handler: () => {
+          this.excluir(veiculo);
+        }
+      }, {
+        text: 'NÃO'
+      }]
+    });
+    alerta.present();
+  }
+
+  private async excluir(veiculo: Veiculo) {
+    const busyLoader = await this.loadingController.create({ message: 'Excluíndo...' });
+    busyLoader.present();
+    
+    this.veiculoService.excluir(veiculo).subscribe(() => {
+      this.listar()
+      busyLoader.dismiss();
+    });
+  }
+
 }

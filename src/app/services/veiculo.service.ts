@@ -18,11 +18,27 @@ export class VeiculoService {
     return this.httpClient.get<Veiculo[]>(this.URI);
   }
 
+  adicionar(veiculo: Veiculo) {
+    return this.httpClient.post(this.URI, veiculo);
+  }
+
+  atualizar(veiculo: Veiculo) {
+    return this.httpClient.put<Veiculo>(`${this.URI}/${veiculo.id}`, servico);
+  }
+
   excluir(veiculo: Veiculo){
     return this.httpClient.delete(`${this.URI}/${veiculo.id}`);
   }
 
-  adicionar(veiculo: Veiculo) {
-    return this.httpClient.post(this.URI, veiculo);
+  getServico(id: number) {
+    return this.httpClient.get<Veiculo>(`${this.URI}/${id}`);
+  }
+
+  salvar(veiculo: Veiculo) {
+    if (veiculo && veiculo.id) {
+      return this.atualizar(veiculo);
+    } else {
+      return this.adicionar(veiculo);
+    }
   }
 }

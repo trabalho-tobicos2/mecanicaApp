@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Serviços</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let servico of servicos">
+      <ion-item>
+        <ion-label>
+          <h2>
+            {{servico.descricao}}
+          </h2>
+          <h3>
+            Tipo: <ion-text color="medium">{{servico.tipo}}</ion-text>
+          </h3>
+          <h3>
+            Cobrança: <ion-text color="medium">{{servico.cobranca}}</ion-text>
+          </h3>
+          <h3>
+            Preço: <ion-text color="medium">{{servico.preco}}</ion-text>
+          </h3>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option [routerLink]="['/servicos', 'editar', servico.id]">
+          <ion-icon name="create" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="confirmarExclusao(servico)">
+          <ion-icon name="trash-sharp" slot="icon-only" ></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/servicos', 'cadastro']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

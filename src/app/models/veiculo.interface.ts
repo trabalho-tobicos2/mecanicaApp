@@ -1,4 +1,4 @@
-export interface Cliente {
+export interface Veiculo {
     id?: number;
     descricao: string;
     placa: string;

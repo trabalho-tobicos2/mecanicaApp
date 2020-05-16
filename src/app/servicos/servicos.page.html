@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Serviços</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -19,7 +22,7 @@
             Cobrança: <ion-text color="medium">{{servico.cobranca}}</ion-text>
           </h3>
           <h3>
-            Preço: <ion-text color="medium">{{servico.preco}}</ion-text>
+            Preço: <ion-text color="success">{{servico.preco | currency:'BRL'}}</ion-text>
           </h3>
         </ion-label>
       </ion-item>

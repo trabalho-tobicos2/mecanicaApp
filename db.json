@@ -42,7 +42,8 @@
             "cpf": "099.889.799-02", 
             "endereco": "Rua Norte, Bairro Centro, Criciúma", 
             "telefone": "(48) 3500-0048", 
-            "celular": "(48) 98888-8888"
+            "celular": "(48) 98888-8888",
+            "imagem": "https://i.pinimg.com/originals/60/98/d3/6098d38f21d6e6bd6ebf70d7c1351b47.jpg"
         },
         { 
             "id": 2, 
@@ -50,7 +51,8 @@
             "cpf": "055.665.556.05", 
             "endereco": "Av. Sul, Bairro Centro, Criciúma", 
             "telefone": "(48) 3500-8888", 
-            "celular": "(48) 92222-2222"
+            "celular": "(48) 92222-2222",
+            "imagem": "https://imgsapp.em.com.br/app/noticia_127983242361/2013/05/15/387620/20130515085554444287o.jpg"
         }
     ],
     "mecanicos":  [

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de veiculos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #veiculoForm="ngForm" novalidate>
+
+    <ion-item>
+      <ion-label position="floating">Descrição *:</ion-label>
+      <ion-input type="text" name="descricao" [(ngModel)]="veiculo.descricao" required minlength="3" pattern="[a-zA-Z ]+" #campoDescricao="ngModel">
+      </ion-input>
+      <ion-text color="danger" *ngIf="campoDescricao.invalid && (campoDescricao.dirty || campoDescricao.touched)">
+        <small>
+          <span *ngIf="campoDescricao.errors.required">
+            A descrição é obrigatório
+          </span>
+          <span *ngIf="campoDescricao.errors.minlength">campoDescricao
+            O campo descrição deve ter no mínimo 3 caracteres
+          </span>
+          <span *ngIf="campoDescricao.errors.pattern">
+            O campo descrição deve conter apenas letras
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Placa: </ion-label>
+      <ion-input maxlength ="7" #placa="ngModel" type="text" [(ngModel)]="veiculo.placa" name="placa" pattern="[A-Z0-9]{7}" required></ion-input>
+      <ion-text color="danger" *ngIf="placa.invalid && (placa.dirty || placa.touched)">
+        <small>
+          <span *ngIf="placa.errors.required">
+            Placa obrigatório
+          </span>
+          <span *ngIf="placa.errors.pattern">
+            
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="veiculoForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+  </form>
+
+</ion-content>

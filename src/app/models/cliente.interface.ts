@@ -5,4 +5,5 @@ export interface Cliente {
     endereco: string;
     telefone?: string;
     celular: string;
+    imagem: string;
 }

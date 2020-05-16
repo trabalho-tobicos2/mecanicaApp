@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let cliente of clientes">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-img [src]="cliente.imagem"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>
+            {{cliente.nome}}
+          </h2>
+          <h3>
+            CPF: <ion-text color="medium">{{cliente.cpf}}</ion-text>
+          </h3>
+          <h3>
+            Endereço: <ion-text color="medium">{{cliente.endereco}}</ion-text>
+          </h3>
+          <h3>
+            Telefone: <ion-text color="medium">{{cliente.telefone}}</ion-text>
+          </h3>
+          <h3>
+            Celular: <ion-text color="medium">{{cliente.celular}}</ion-text>
+          </h3>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option [routerLink]="['/clientes', 'editar', cliente.id]">
+          <ion-icon name="create" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="confirmacaoExclusao(cliente)">
+          <ion-icon name="trash-sharp" slot="icon-only" ></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/clientes', 'cadastro']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

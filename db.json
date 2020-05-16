@@ -6,7 +6,8 @@
       "tipo": "Sextavado ",
       "marca": "Belenus",
       "cor": "Prata",
-      "preco": 1.99
+      "preco": 1.99,
+      "imagem": "https://io.convertiez.com.br/m/amegaloja/shop/products/images/9152/medium/parafuso-sextavado-zincado-unc-5-8-x-3-1-2_3092.jpg"
     },
     {
       "id": 2,
@@ -14,7 +15,17 @@
       "tipo": "Teves",
       "marca": "LonaFlex",
       "cor": "Prata",
-      "preco": 184
+      "preco": 138,
+      "imagem": "https://a-static.mlcdn.com.br/574x431/kit-pastilha-disco-freio-crossfox-2012-a-2018-dianteiro-ventilado-bosch-lonaflex/lojahipervarejo/8fe69c6a13c1ffd5cedc5cc9938c1d17/a34ad1abe3504b60f20fda9310e70b47.jpg"
+    },
+    {
+      "descricao": "teste",
+      "tipo": "teste",
+      "marca": "teste",
+      "cor": "teste",
+      "preco": "122",
+      "imagem": "https://s.gravatar.com/avatar/0733b20f447fe87ca56dff983adb45db?size=100&default=retro",
+      "id": 3
     }
   ],
   "servicos": [

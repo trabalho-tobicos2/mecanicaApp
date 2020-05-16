@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'servicos',
     loadChildren: () => import('./servicos/servicos.module').then( m => m.ServicosPageModule)
+  },
+  {
+    path: 'pecas',
+    loadChildren: () => import('./pecas/pecas.module').then( m => m.PecasPageModule)
   }
 ];
 

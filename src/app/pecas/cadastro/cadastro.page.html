@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Peças</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #pecaForm="ngForm" novalidate>
+
+    <ion-item>
+      <ion-label position="floating">Descrição *:</ion-label>
+      <ion-input type="text" name="descricao" [(ngModel)]="peca.descricao" required minlength="3" #descricao="ngModel">
+      </ion-input>
+      <ion-text color="danger" *ngIf="descricao.invalid && (descricao.dirty || descricao.touched)">
+        <small>
+          <span *ngIf="descricao.errors.required">
+           Descrição obrigatória
+          </span>
+          <span *ngIf="descricao.errors.minlength">
+            O campo descrição deve ter no mínimo 3 caracteres
+          </span>
+         </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo *: </ion-label>
+      <ion-input #tipo="ngModel" type="text" [(ngModel)]="peca.tipo" name="tipo" required></ion-input>
+      <ion-text color="danger" *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)">
+        <small>
+          <span *ngIf="tipo.errors.required">
+            Tipo obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Marca *: </ion-label>
+      <ion-input #marca="ngModel" type="text" [(ngModel)]="peca.marca" name="marca" required></ion-input>
+      <ion-text color="danger" *ngIf="marca.invalid && (marca.dirty || marca.touched)">
+        <small>
+          <span *ngIf="marca.errors.required">
+            Marca obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cor *: </ion-label>
+      <ion-input #cor="ngModel" type="text" [(ngModel)]="peca.cor" name="cor" required></ion-input>
+      <ion-text color="danger" *ngIf="cor.invalid && (cor.dirty || cor.touched)">
+        <small>
+          <span *ngIf="cor.errors.required">
+            Cor obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Preço *: </ion-label>
+      <ion-input #preco="ngModel" type="number" [(ngModel)]="peca.preco" name="preco" required pattern="[0-9]+"></ion-input>
+      <ion-text color="danger" *ngIf="preco.invalid && (preco.dirty || preco.touched)">
+        <small>
+          <span *ngIf="preco.errors.required">
+            Preço obrigatório
+          </span>
+         </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Imagem (URL) *: </ion-label>
+      <ion-input #imagem="ngModel" type="url" [(ngModel)]="peca.imagem" name="imagem" required></ion-input>
+      <ion-text color="danger" *ngIf="imagem.invalid && (imagem.dirty || imagem.touched)">
+        <small>
+          <span *ngIf="imagem.errors.required">
+            A imagem é obrigatória.
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="pecaForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </form>
+</ion-content>

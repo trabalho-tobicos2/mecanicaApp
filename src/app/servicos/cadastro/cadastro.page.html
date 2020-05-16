@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Serviços</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #servicoForm="ngForm" novalidate>
+
+    <ion-item>
+      <ion-label position="floating">Descrição *:</ion-label>
+      <ion-input type="text" name="descricao" [(ngModel)]="servico.descricao" required minlength="3" #descricao="ngModel">
+      </ion-input>
+      <ion-text color="danger" *ngIf="descricao.invalid && (descricao.dirty || descricao.touched)">
+        <small>
+          <span *ngIf="descricao.errors.required">
+           Descrição obrigatória
+          </span>
+          <span *ngIf="descricao.errors.minlength">
+            O campo descrição deve ter no mínimo 3 caracteres
+          </span>
+         </small>
+      </ion-text>
+    </ion-item>
+
+
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="servicoForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-item>
+      <ion-label position="floating">Tipo *: </ion-label>
+      <ion-input #tipo="ngModel" type="text" [(ngModel)]="servico.tipo" name="tipo" required></ion-input>
+      <ion-text color="danger" *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)">
+        <small>
+          <span *ngIf="tipo.errors.required">
+            Tipo obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo da cobrança *: </ion-label>
+      <ion-input #cobranca="ngModel" type="text" [(ngModel)]="servico.cobranca" name="cobranca" required></ion-input>
+      <ion-text color="danger" *ngIf="cobranca.invalid && (cobranca.dirty || cobranca.touched)">
+        <small>
+          <span *ngIf="cobranca.errors.required">
+            Cobrança obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Preço *: </ion-label>
+      <ion-input #preco="ngModel" type="number" [(ngModel)]="servico.preco" name="preco" required pattern="[0-9]+"></ion-input>
+      <ion-text color="danger" *ngIf="preco.invalid && (preco.dirty || preco.touched)">
+        <small>
+          <span *ngIf="preco.errors.required">
+            Preço obrigatório
+          </span>
+          <span *ngIf="preco.errors.pattern">
+            O preço deve ser superior a zero
+          </span>
+         </small>
+      </ion-text>
+    </ion-item>
+
+  </form>
+</ion-content>

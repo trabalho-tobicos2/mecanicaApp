@@ -1,160 +1,158 @@
 {
-    "pecas":  [
-        { 
-            "id": 1, 
-            "descricao": "Parafuso", 
-            "tipo": "Sextavado ", 
-            "marca": "Belenus", 
-            "cor": "Prata", 
-            "preco": 1.99
-        },
-        { 
-            "id": 2, 
-            "descricao": "Kit Pastilha Disco Freio", 
-            "tipo": "Teves", 
-            "marca": "LonaFlex", 
-            "cor": "Prata", 
-            "preco": 184
-        }
-    ],
-    "servicos":  [
-        { 
-            "id": 1, 
-            "descricao": "Chapeação", 
-            "tipo": "Manual", 
-            "tecnico": "Antônio Elias", 
-            "cobranca": "Hora", 
-            "preco": 10
-        },
-        { 
-            "id": 2, 
-            "descricao": "Troca de óleo", 
-            "tipo": "Manual", 
-            "tecnico": "Antônio Elias", 
-            "cobranca": "Unidade", 
-            "preco": 5
-        }
-    ],
-    "clientes":  [
-        { 
-            "id": 1, 
-            "nome": "João da Silva", 
-            "cpf": "099.889.799-02", 
-            "endereco": "Rua Norte, Bairro Centro, Criciúma", 
-            "telefone": "(48) 3500-0048", 
-            "celular": "(48) 98888-8888",
-            "imagem": "https://i.pinimg.com/originals/60/98/d3/6098d38f21d6e6bd6ebf70d7c1351b47.jpg"
-        },
-        { 
-            "id": 2, 
-            "nome": "Maria Dolores", 
-            "cpf": "055.665.556.05", 
-            "endereco": "Av. Sul, Bairro Centro, Criciúma", 
-            "telefone": "(48) 3500-8888", 
-            "celular": "(48) 92222-2222",
-            "imagem": "https://imgsapp.em.com.br/app/noticia_127983242361/2013/05/15/387620/20130515085554444287o.jpg"
-        }
-    ],
-    "mecanicos":  [
-        { 
-            "id": 1, 
-            "nome": "Antônio Elias", 
-            "cpf": "092.889.799-02", 
-            "endereco": "Rua Norte, Bairro Centro, Araranguá", 
-            "telefone": "(48) 3500-0046", 
-            "celular": "(48) 98888-8885"
-        },
-        { 
-            "id": 2, 
-            "nome": "Fernando Mendes", 
-            "cpf": "053.665.556.05", 
-            "endereco": "Av. Sul, Bairro Centro, Criciúma", 
-            "telefone": "(48) 3500-8883", 
-            "celular": "(48) 92222-2333"
-        }
-    ],
-    "veiculos":  [
-        { 
-            "id": 1, 
-            "descricao": "Palio", 
-            "placa": "A1B2C3D", 
-            "renavan": "555555555", 
-            "marca": "Fiat", 
-            "cor": "Preto", 
-            "modelo": "Ret", 
-            "combustivel": "Flex"
-        },
-        { 
-            "id": 2, 
-            "descricao": "Civic", 
-            "placa": "AAA-1234", 
-            "renavan": "225555522", 
-            "marca": "Ford", 
-            "cor": "Prata", 
-            "modelo": "Sedan", 
-            "combustivel": "Flex"
-        }
-    ],
-    "ordens": [
+  "pecas": [
+    {
+      "id": 1,
+      "descricao": "Parafuso",
+      "tipo": "Sextavado ",
+      "marca": "Belenus",
+      "cor": "Prata",
+      "preco": 1.99
+    },
+    {
+      "id": 2,
+      "descricao": "Kit Pastilha Disco Freio",
+      "tipo": "Teves",
+      "marca": "LonaFlex",
+      "cor": "Prata",
+      "preco": 184
+    }
+  ],
+  "servicos": [
+    {
+      "id": 1,
+      "descricao": "Chapeação",
+      "tipo": "Manual",
+      "cobranca": "Hora",
+      "preco": 10
+    },
+    {
+      "id": 2,
+      "descricao": "Troca de óleo",
+      "tipo": "Manual",
+      "cobranca": "Unidade",
+      "preco": 5
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João da Silva",
+      "cpf": "099.889.799-02",
+      "endereco": "Rua Norte, Bairro Centro, Criciúma",
+      "telefone": "(48) 3500-0048",
+      "celular": "(48) 98888-8888",
+      "imagem": "https://i.pinimg.com/originals/60/98/d3/6098d38f21d6e6bd6ebf70d7c1351b47.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Dolores",
+      "cpf": "055.665.556.05",
+      "endereco": "Av. Sul, Bairro Centro, Criciúma",
+      "telefone": "(48) 3500-8888",
+      "celular": "(48) 92222-2222",
+      "imagem": "https://imgsapp.em.com.br/app/noticia_127983242361/2013/05/15/387620/20130515085554444287o.jpg"
+    }
+  ],
+  "mecanicos": [
+    {
+      "id": 1,
+      "nome": "Antônio Elias",
+      "cpf": "092.889.799-02",
+      "endereco": "Rua Norte, Bairro Centro, Araranguá",
+      "telefone": "(48) 3500-0046",
+      "celular": "(48) 98888-8885"
+    },
+    {
+      "id": 2,
+      "nome": "Fernando Mendes",
+      "cpf": "053.665.556.05",
+      "endereco": "Av. Sul, Bairro Centro, Criciúma",
+      "telefone": "(48) 3500-8883",
+      "celular": "(48) 92222-2333"
+    }
+  ],
+  "veiculos": [
+    {
+      "id": 1,
+      "descricao": "Palio",
+      "placa": "A1B2C3D",
+      "renavan": "555555555",
+      "marca": "Fiat",
+      "cor": "Preto",
+      "modelo": "Ret",
+      "combustivel": "Flex"
+    },
+    {
+      "id": 2,
+      "descricao": "Civic",
+      "placa": "AAA-1234",
+      "renavan": "225555522",
+      "marca": "Ford",
+      "cor": "Prata",
+      "modelo": "Sedan",
+      "combustivel": "Flex"
+    }
+  ],
+  "ordens": [
+    {
+      "id": 1,
+      "cliente": {
+        "id": 1,
+        "nome": "João da Silva"
+      },
+      "data": "2020-10-20",
+      "veiculo": {
+        "id": 1,
+        "descricao": "Palio"
+      },
+      "pecas": [
         {
-            "id": 1,
-            "cliente": { 
-                "id": 1, 
-                "nome": "João da Silva" 
-            },
-            "data": "2020-10-20",
-            "veiculo": { 
-                "id": 1, 
-                "descricao": "Palio" 
-            },
-            "pecas": [
-                { 
-                    "id": 1, 
-                    "descricao": "Parafuso" 
-                }        
-            ],
-            "servicos": [
-                { 
-                    "id": 1, 
-                    "descricao": "Chapeação" 
-                }        
-            ],
-            "totalHora": 1,
-            "totalPeca": 1.99,
-            "totalServico": 10,
-            "desconto": 0,
-            "totalBruto": 11.99,
-            "totalLiquido": 11.99
-        },
+          "id": 1,
+          "descricao": "Parafuso"
+        }
+      ],
+      "servicos": [
         {
-            "id": 2,
-            "cliente": { 
-                "id": 2, 
-                "nome": "Maria Dolores" 
-            },
-            "data": "2020-05-20",
-            "veiculo": { 
-                "id": 2, 
-                "descricao": "Civic" 
-            },
-            "pecas": [
-                { 
-                    "id": 2, 
-                    "descricao": "Kit Pastilha Disco Freio" 
-                }        
-            ],
-            "servicos": [
-                { 
-                    "id": 2, 
-                    "descricao": "Troca de óleo" 
-                }        
-            ],
-            "totalHora": 1,
-            "totalPeca": 1.99,
-            "totalServico": 10,
-            "desconto": 0,
-            "totalBruto": 11.99,
-            "totalLiquido": 11.99
-        }        
-    ]
+          "id": 1,
+          "descricao": "Chapeação"
+        }
+      ],
+      "totalHora": 1,
+      "totalPeca": 1.99,
+      "totalServico": 10,
+      "desconto": 0,
+      "totalBruto": 11.99,
+      "totalLiquido": 11.99
+    },
+    {
+      "id": 2,
+      "cliente": {
+        "id": 2,
+        "nome": "Maria Dolores"
+      },
+      "data": "2020-05-20",
+      "veiculo": {
+        "id": 2,
+        "descricao": "Civic"
+      },
+      "pecas": [
+        {
+          "id": 2,
+          "descricao": "Kit Pastilha Disco Freio"
+        }
+      ],
+      "servicos": [
+        {
+          "id": 2,
+          "descricao": "Troca de óleo"
+        }
+      ],
+      "totalHora": 1,
+      "totalPeca": 1.99,
+      "totalServico": 10,
+      "desconto": 0,
+      "totalBruto": 11.99,
+      "totalLiquido": 11.99
+    }
+  ]
 }

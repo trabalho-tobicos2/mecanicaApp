@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Clientes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #clienteForm="ngForm" novalidate>
+
+    <ion-item>
+      <ion-label position="floating">Nome *:</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="cliente.nome" required minlength="5" pattern="[a-zA-Z ]+" #campoNome="ngModel">
+      </ion-input>
+      <ion-text color="danger" *ngIf="campoNome.invalid && (campoNome.dirty || campoNome.touched)">
+        <small>
+          <span *ngIf="campoNome.errors.required">
+            O nome é obrigatório
+          </span>
+          <span *ngIf="campoNome.errors.minlength">
+            O campo nome deve ter no mínimo 5 caracteres
+          </span>
+          <span *ngIf="campoNome.errors.pattern">
+            O campo nome deve conter apenas letras
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">CPF: </ion-label>
+      <ion-input #isbn="ngModel" type="text" [(ngModel)]="cliente.cpf" name="isbn" pattern="[0-9]{11}" required></ion-input>
+      <ion-text color="danger" *ngIf="isbn.invalid && (isbn.dirty || isbn.touched)">
+        <small>
+          <span *ngIf="isbn.errors.required">
+            CPF obrigatório
+          </span>
+          <span *ngIf="isbn.errors.pattern">
+            CPF contém 11 dígitos númericos
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="clienteForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </form>
+</ion-content>

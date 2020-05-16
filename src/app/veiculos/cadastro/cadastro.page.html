@@ -30,19 +30,115 @@
     </ion-item>
   
     <ion-item>
-      <ion-label position="floating">Placa: </ion-label>
+      <ion-label position="floating">Placa *: </ion-label>
       <ion-input maxlength ="7" #placa="ngModel" type="text" [(ngModel)]="veiculo.placa" name="placa" pattern="[A-Z0-9]{7}" required></ion-input>
       <ion-text color="danger" *ngIf="placa.invalid && (placa.dirty || placa.touched)">
         <small>
           <span *ngIf="placa.errors.required">
-            Placa obrigatório
+            Placa obrigatório.<br>
           </span>
           <span *ngIf="placa.errors.pattern">
-            
+            O Campo Placa pode conter Letras maiúsculas e numeros.<br>
+          </span>
+          <span *ngIf="placa.errors.pattern">
+            O Campo Placa deve conter 7 caracteres.<br>
           </span>
         </small>
       </ion-text>
     </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Renavam *: </ion-label>
+      <ion-input  minlength="8" maxlength ="11" #renavam="ngModel" type="text" [(ngModel)]="veiculo.renavan" name="renavam" pattern="[0-9]{11}" required></ion-input>
+      <ion-text color="danger" *ngIf="renavam.invalid && (renavam.dirty || renavam.touched)">
+        <small>
+          <span *ngIf="renavam.errors.required">
+            Rebavam obrigatório
+          </span>
+          <span *ngIf="renavam.errors.pattern">
+            O Campo renavam pode conter apenas numeros.<br>
+          </span>
+          <span *ngIf="renavam.errors.pattern">
+           Minimo 8 numeros maximo 11.
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Marca *: </ion-label>
+      <ion-input   #marca="ngModel" type="text" [(ngModel)]="veiculo.marca" name="marca" pattern="[a-zA-Z]{2,}" required></ion-input>
+      <ion-text color="danger" *ngIf="marca.invalid && (marca.dirty || marca.touched)">
+        <small>
+          <span *ngIf="marca.errors.required">
+            Marca obrigatório
+          </span>
+          <span *ngIf="marca.errors.pattern">
+            O Campo marca pode conter apenas Letras.<br>
+          </span>
+          <span *ngIf="marca.errors.pattern">
+           Minimo 2 caracteres.
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cor *: </ion-label>
+      <ion-input   #cor="ngModel" type="text" [(ngModel)]="veiculo.cor" name="cor" pattern="[a-zA-Z]{2,}" required></ion-input>
+      <ion-text color="danger" *ngIf="cor.invalid && (cor.dirty || cor.touched)">
+        <small>
+          <span *ngIf="cor.errors.required">
+            Cor obrigatório
+          </span>
+          <span *ngIf="cor.errors.pattern">
+            O Campo cor pode conter apenas Letras.<br>
+          </span>
+          <span *ngIf="cor.errors.pattern">
+           Minimo 2 caracteres.
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Modelo *: </ion-label>
+      <ion-input   #modelo="ngModel" type="text" [(ngModel)]="veiculo.modelo" name="modelo" pattern="[a-zA-Z]{2,}" required></ion-input>
+      <ion-text color="danger" *ngIf="modelo.invalid && (modelo.dirty || modelo.touched)">
+        <small>
+          <span *ngIf="modelo.errors.required">
+            Modelo obrigatório
+          </span>
+          <span *ngIf="modelo.errors.pattern">
+            O Campo modelo pode conter apenas Letras.<br>
+          </span>
+          <span *ngIf="modelo.errors.pattern">
+           Minimo 2 caracteres.
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Combustivel *: </ion-label>
+      <ion-input   #combustivel="ngModel" type="text" [(ngModel)]="veiculo.combustivel" name="combustivel" pattern="[a-zA-Z]{2,}" required></ion-input>
+      <ion-text color="danger" *ngIf="combustivel.invalid && (combustivel.dirty || combustivel.touched)">
+        <small>
+          <span *ngIf="combustivel.errors.required">
+            Modelo obrigatório
+          </span>
+          <span *ngIf="combustivel.errors.pattern">
+            O Campo modelo pode conter apenas Letras.<br>
+          </span>
+          <span *ngIf="combustivel.errors.pattern">
+           Minimo 2 caracteres.
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    
+
     <ion-fab vertical="bottom" horizontal="end">
       <ion-fab-button (click)="salvar()" [disabled]="veiculoForm.invalid">
         <ion-icon name="checkmark-outline"></ion-icon>
@@ -50,5 +146,7 @@
     </ion-fab>
   
   </form>
+
+  
 
 </ion-content>

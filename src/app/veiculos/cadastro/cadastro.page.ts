@@ -33,4 +33,15 @@ export class CadastroPage implements OnInit {
     }
   }
 
+  async salvar() {
+    let loading = await this.loadingController.create({message: 'Salvando'});
+    loading.present();
+
+    this.veiculoService.salvar(this.veiculo)
+      .subscribe(() => {
+        loading.dismiss();
+        this.navController.navigateForward(['/veiculos']);
+      });
+  }
+
 }

@@ -8,11 +8,14 @@ import { ClientesPageRoutingModule } from './clientes-routing.module';
 
 import { ClientesPage } from './clientes.page';
 
+import { NgxMaskModule } from 'ngx-mask'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    NgxMaskModule.forRoot(),
     ClientesPageRoutingModule
   ],
   declarations: [ClientesPage]

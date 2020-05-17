@@ -20,7 +20,7 @@ import { NgxMaskModule } from 'ngx-mask'
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    NgxMaskModule.forRoot(),
+    NgxMaskModule.forRoot()
   ],
   providers: [
     StatusBar,

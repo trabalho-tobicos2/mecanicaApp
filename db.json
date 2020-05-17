@@ -102,46 +102,16 @@
       "cor": "Prata",
       "modelo": "Sedan",
       "combustivel": "Flex"
-    },
-    {
-      "descricao": "dfdgdgdgdg",
-      "placa": "A21SSSS",
-      "renavan": "",
-      "marca": "",
-      "cor": "",
-      "modelo": "",
-      "Combustivel": "",
-      "id": 3
-    },
-    {
-      "descricao": "fsanfsnafkjsnaf",
-      "placa": "AS11111",
-      "renavan": "",
-      "marca": "",
-      "cor": "",
-      "modelo": "",
-      "Combustivel": "",
-      "id": 4
-    },
-    {
-      "descricao": "sdasdas",
-      "placa": "AAA1111",
-      "renavan": "11111111111",
-      "marca": "aa",
-      "cor": "",
-      "modelo": "",
-      "Combustivel": "",
-      "id": 5
     }
   ],
   "ordens": [
     {
       "id": 1,
+      "data": "2020-10-20",
       "cliente": {
         "id": 1,
         "nome": "João da Silva"
       },
-      "data": "2020-10-20",
       "veiculo": {
         "id": 1,
         "descricao": "Palio"
@@ -158,20 +128,19 @@
           "descricao": "Chapeação"
         }
       ],
-      "totalHora": 1,
-      "totalPeca": 1.99,
       "totalServico": 10,
+      "totalPeca": 1.99,
       "desconto": 0,
       "totalBruto": 11.99,
       "totalLiquido": 11.99
     },
     {
       "id": 2,
+      "data": "2020-05-20",
       "cliente": {
         "id": 2,
         "nome": "Maria Dolores"
       },
-      "data": "2020-05-20",
       "veiculo": {
         "id": 2,
         "descricao": "Civic"
@@ -188,9 +157,8 @@
           "descricao": "Troca de óleo"
         }
       ],
-      "totalHora": 1,
-      "totalPeca": 1.99,
       "totalServico": 10,
+      "totalPeca": 1.99,
       "desconto": 0,
       "totalBruto": 11.99,
       "totalLiquido": 11.99

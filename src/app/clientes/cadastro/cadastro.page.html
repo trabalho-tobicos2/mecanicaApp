@@ -12,7 +12,8 @@
 
     <ion-item>
       <ion-label position="floating">Nome *:</ion-label>
-      <ion-input type="text" name="nome" [(ngModel)]="cliente.nome" required minlength="5" pattern="[a-zA-Z ]+" #campoNome="ngModel">
+      <ion-input type="text" name="nome" [(ngModel)]="cliente.nome" required minlength="5" pattern="[a-zA-Z ]+"
+        #campoNome="ngModel">
       </ion-input>
       <ion-text color="danger" *ngIf="campoNome.invalid && (campoNome.dirty || campoNome.touched)">
         <small>
@@ -30,15 +31,63 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">CPF: </ion-label>
-      <ion-input #isbn="ngModel" type="text" [(ngModel)]="cliente.cpf" name="isbn" pattern="[0-9]{11}" required></ion-input>
-      <ion-text color="danger" *ngIf="isbn.invalid && (isbn.dirty || isbn.touched)">
+      <ion-label position="floating">CPF *: </ion-label>
+      <ion-input mask="(00) 0000 – 0000" #cpf="ngModel" type="text" [(ngModel)]="cliente.cpf" name="cpf" pattern="[0-9]{11}"  minlength="11"
+        maxlength="11" required></ion-input>
+      <ion-text color="danger" *ngIf="cpf.invalid && (cpf.dirty || cpf.touched)">
         <small>
-          <span *ngIf="isbn.errors.required">
+          <span *ngIf="cpf.errors.required">
             CPF obrigatório
           </span>
-          <span *ngIf="isbn.errors.pattern">
+          <span *ngIf="cpf.errors.pattern">
             CPF contém 11 dígitos númericos
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Endereço *: </ion-label>
+      <ion-input #endereco="ngModel" type="text" [(ngModel)]="cliente.endereco" name="endereco" minlength="3" required>
+      </ion-input>
+      <ion-text color="danger" *ngIf="endereco.invalid && (endereco.dirty || endereco.touched)">
+        <small>
+          <span *ngIf="endereco.errors.required">
+            Endereço obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefone : </ion-label>
+      <ion-input #telefone="ngModel" type="text" [(ngModel)]="cliente.telefone" name="telefone" pattern="[0-9]{11}"
+        minlength="11" maxlength="11"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Celular *: </ion-label>
+      <ion-input #celular="ngModel" type="text" [(ngModel)]="cliente.celular" name="celular" pattern="[0-9]{11}"
+        minlength="11" maxlength="11" required></ion-input>
+      <ion-text color="danger" *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+        <small>
+          <span *ngIf="celular.errors.required">
+            Celular obrigatório
+          </span>
+          <span *ngIf="celular.errors.pattern">
+            Celular contém 11 dígitos númericos
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Imagem (URL) *: </ion-label>
+      <ion-input #imagem="ngModel" type="url" [(ngModel)]="cliente.imagem" name="imagem" required></ion-input>
+      <ion-text color="danger" *ngIf="imagem.invalid && (imagem.dirty || imagem.touched)">
+        <small>
+          <span *ngIf="imagem.errors.required">
+            A imagem é obrigatória.
           </span>
         </small>
       </ion-text>

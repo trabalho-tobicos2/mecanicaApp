@@ -17,7 +17,13 @@ export class ServicoService {
     return this.httpClient.get<Servico[]>(this.URI);
   }
 
-  
+  adicionar(servico: Servico) {
+    return this.httpClient.post(this.URI, servico);
+  }
+
+  atualizar(servico: Servico) {
+    return this.httpClient.put<Servico>(`${this.URI}/${servico.id}`, servico);
+  }
 
   excluir(servico: Servico) {
     return this.httpClient.delete(`${this.URI}/${servico.id}`);

@@ -87,20 +87,14 @@ export class CadastroPage implements OnInit {
   }
 
   async listarPecas() {
-    const busyLoader = await this.busyLoader.create('Carregando peças...');
-    
     this.pecaService.getPecas().subscribe((pecas) => {
       this.pecas = pecas;
-      busyLoader.dismiss();
     });
   }
 
   async listarServicos() {
-    const busyLoader = await this.busyLoader.create('Carregando serviços...');
-    
-    this.servicoService.getServicos().subscribe((servicos) => {
+     this.servicoService.getServicos().subscribe((servicos) => {
       this.servicos = servicos;
-      busyLoader.dismiss();
     });
   }
 

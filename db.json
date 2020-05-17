@@ -91,7 +91,7 @@
       "descricao": "Civic",
       "placa": "AAA1234",
       "renavan": "22555552211",
-      "marca": "Honda",
+      "marca": "Ford",
       "cor": "Prata",
       "modelo": "Sedan",
       "combustivel": "Flex"
@@ -109,16 +109,36 @@
         "id": 1,
         "descricao": "Palio"
       },
+      "mecanico": {
+        "id": 1,
+        "nome": "Antônio Elias"
+      },
       "pecas": [
         {
           "id": 1,
-          "descricao": "Parafuso"
+          "descricao": "Parafuso",
+          "tipo": "Sextavado ",
+          "marca": "Belenus",
+          "cor": "Prata",
+          "preco": 1.99
         }
       ],
       "servicos": [
         {
           "id": 1,
-          "descricao": "Chapeação"
+          "descricao": "Chapeação",
+          "tipo": "Manual",
+          "tecnico": "Antônio Elias",
+          "cobranca": "Hora",
+          "preco": 10
+        },
+        {
+          "id": 2,
+          "descricao": "Troca de óleo",
+          "tipo": "Manual",
+          "tecnico": "Antônio Elias",
+          "cobranca": "Unidade",
+          "preco": 5
         }
       ],
       "totalServico": 10,
@@ -137,6 +157,10 @@
       "veiculo": {
         "id": 2,
         "descricao": "Civic"
+      },
+      "mecanico": {
+        "id": 2,
+        "nome": "Fernando Mendes"
       },
       "pecas": [
         {

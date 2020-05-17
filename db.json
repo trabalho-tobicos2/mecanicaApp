@@ -17,15 +17,6 @@
       "cor": "Prata",
       "preco": 138,
       "imagem": "https://a-static.mlcdn.com.br/574x431/kit-pastilha-disco-freio-crossfox-2012-a-2018-dianteiro-ventilado-bosch-lonaflex/lojahipervarejo/8fe69c6a13c1ffd5cedc5cc9938c1d17/a34ad1abe3504b60f20fda9310e70b47.jpg"
-    },
-    {
-      "descricao": "teste",
-      "tipo": "teste",
-      "marca": "teste",
-      "cor": "teste",
-      "preco": "122",
-      "imagem": "https://s.gravatar.com/avatar/0733b20f447fe87ca56dff983adb45db?size=100&default=retro",
-      "id": 3
     }
   ],
   "servicos": [
@@ -96,42 +87,12 @@
     {
       "id": 2,
       "descricao": "Civic",
-      "placa": "AAA-1234",
-      "renavan": "225555522",
+      "placa": "AAA1234",
+      "renavan": "22555552211",
       "marca": "Ford",
       "cor": "Prata",
       "modelo": "Sedan",
       "combustivel": "Flex"
-    },
-    {
-      "descricao": "dfdgdgdgdg",
-      "placa": "A21SSSS",
-      "renavan": "",
-      "marca": "",
-      "cor": "",
-      "modelo": "",
-      "Combustivel": "",
-      "id": 3
-    },
-    {
-      "descricao": "fsanfsnafkjsnaf",
-      "placa": "AS11111",
-      "renavan": "",
-      "marca": "",
-      "cor": "",
-      "modelo": "",
-      "Combustivel": "",
-      "id": 4
-    },
-    {
-      "descricao": "sdasdas",
-      "placa": "AAA1111",
-      "renavan": "11111111111",
-      "marca": "aa",
-      "cor": "",
-      "modelo": "",
-      "Combustivel": "",
-      "id": 5
     }
   ],
   "ordens": [

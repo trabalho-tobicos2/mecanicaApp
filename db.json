@@ -44,7 +44,8 @@
       "cpf": "099.889.799-02",
       "endereco": "Rua Norte, Bairro Centro, Criciúma",
       "telefone": "(48) 3500-0048",
-      "celular": "(48) 98888-8888"
+      "celular": "(48) 98888-8888",
+      "imagem": "https://i.pinimg.com/originals/60/98/d3/6098d38f21d6e6bd6ebf70d7c1351b47.jpg"
     },
     {
       "id": 2,
@@ -52,7 +53,8 @@
       "cpf": "055.665.556.05",
       "endereco": "Av. Sul, Bairro Centro, Criciúma",
       "telefone": "(48) 3500-8888",
-      "celular": "(48) 92222-2222"
+      "celular": "(48) 92222-2222",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStQHWAonOCm4RVG8P-bX0QeQhXm5cQQAaWKd9kJFUnKW1CyuY-&usqp=CAU"
     }
   ],
   "mecanicos": [
@@ -89,7 +91,7 @@
       "descricao": "Civic",
       "placa": "AAA1234",
       "renavan": "22555552211",
-      "marca": "Ford",
+      "marca": "Honda",
       "cor": "Prata",
       "modelo": "Sedan",
       "combustivel": "Flex"

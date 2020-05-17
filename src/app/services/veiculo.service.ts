@@ -23,14 +23,14 @@ export class VeiculoService {
   }
 
   atualizar(veiculo: Veiculo) {
-    return this.httpClient.put<Veiculo>(`${this.URI}/${veiculo.id}`, servico);
+    return this.httpClient.put<Veiculo>(`${this.URI}/${veiculo.id}`, veiculo);
   }
 
   excluir(veiculo: Veiculo){
     return this.httpClient.delete(`${this.URI}/${veiculo.id}`);
   }
 
-  getServico(id: number) {
+  getVeiculo(id: number) {
     return this.httpClient.get<Veiculo>(`${this.URI}/${id}`);
   }
 

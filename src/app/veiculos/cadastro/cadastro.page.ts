@@ -14,7 +14,7 @@ export class CadastroPage implements OnInit {
 
   constructor(
     private veiculoService : VeiculoService,
-    private ActivatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private navController : NavController,
     private loadingController : LoadingController
   ) { 
@@ -22,13 +22,13 @@ export class CadastroPage implements OnInit {
   }
 
   async ngOnInit() {
-    const id = parseInt(this.ActivatedRoute.snapshot.params['id']);
+    const id = parseInt(this.activatedRoute.snapshot.params['id']);
     if(id){
       const loading = await this.loadingController.create({message: 'Carregando'});
       loading.present();
-      this.veiculoService.getVeiculos(id).subscribe((veiculo)=> {
+      this.veiculoService.getVeiculo(id).subscribe((veiculo)=> {
         this.veiculo = veiculo;
-        loading.dismiss;
+        loading.dismiss();
       });
     }
   }

@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgxMaskModule } from 'ngx-mask'
+//import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +20,7 @@ import { NgxMaskModule } from 'ngx-mask'
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    NgxMaskModule.forRoot(),
+    //NgxMaskModule.forRoot(),
   ],
   providers: [
     StatusBar,

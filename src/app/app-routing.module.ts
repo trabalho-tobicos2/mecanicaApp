@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'pecas',
     loadChildren: () => import('./pecas/pecas.module').then( m => m.PecasPageModule)
+  },
+  {
+    path: 'ordens',
+    loadChildren: () => import('./ordens/ordens.module').then( m => m.OrdensPageModule)
   }
 ];
 

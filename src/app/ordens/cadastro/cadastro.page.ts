@@ -111,12 +111,12 @@ export class CadastroPage implements OnInit {
     }
   }
 
-  async salvar(ordem: Ordem) {
-    let loading = await this.loadingController.create({ message: 'Salvando...' });
+  async salvar() {
+    let loading = await this.loadingController.create({message: 'Salvando'});
     loading.present();
 
     this.ordemService
-      .salvar(ordem)
+      .salvar(this.ordem)
       .subscribe(() => {
         loading.dismiss();
         this.navController.navigateForward(['/ordens']);

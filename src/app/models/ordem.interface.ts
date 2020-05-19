@@ -13,7 +13,7 @@ export interface Ordem {
     pecas?: Peca[];
     servicos: Servico[];
     totalServico: number;
-    totalPeca?: number;
+    totalPeca: number;
     desconto?: number;
     totalBruto: number;
     totalLiquido: number

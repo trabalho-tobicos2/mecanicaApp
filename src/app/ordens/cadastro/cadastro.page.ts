@@ -123,24 +123,8 @@ export class CadastroPage implements OnInit {
       });
   }
 
-  compareWithCliente(cliente1: Cliente, cliente2: Cliente) {
-    return cliente1 && cliente2 ? cliente1.id === cliente2.id : cliente1 === cliente2;
-  };
-
-  compareWithVeiculo(cliente1: Veiculo, cliente2: Veiculo) {
-    return cliente1 && cliente2 ? cliente1.id === cliente2.id : cliente1 === cliente2;
-  };
-
-  compareWithMecanico(mecanico1: Mecanico, mecanico2: Mecanico) {
-    return mecanico1 && mecanico2 ? mecanico1.id === mecanico2.id : mecanico1 === mecanico2;
-  };
-
-  compareWithPeca(Peca1: Peca, Peca2: Peca) {
-    return Peca1 && Peca2 ? Peca1.id === Peca2.id : Peca1 === Peca2;
-  };
-
-  compareWithServico(servico1: Servico, Servico2: Servico) {
-    return servico1 && Servico2 ? servico1.id === Servico2.id : servico1 === Servico2;
+  compareWith(obj1: any, obj2: any) {
+    return obj1 && obj2 ? obj1.id === obj2.id : obj1 === obj2;
   };
 
 }

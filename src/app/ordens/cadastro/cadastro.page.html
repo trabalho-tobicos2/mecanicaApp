@@ -13,7 +13,7 @@
     <ion-item>
       <ion-label>Cliente:</ion-label>
       <ion-select [(ngModel)]="ordem.cliente" placeholder="Selecione o cliente"
-        [compareWith]="compareWithCliente" name="cliente" >
+        [compareWith]="compareWith" name="cliente" >
         <ion-select-option *ngFor="let cliente of clientes" [value]="cliente">
           {{cliente.nome}}
         </ion-select-option>
@@ -22,13 +22,13 @@
 
     <ion-item>
       <ion-label position="stacked">Data: </ion-label>
-      <ion-input type="date" [(ngModel)]="ordem.data" name="data"></ion-input>
+      <ion-input type="date" [(ngModel)]="ordem.data" name="data" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Veículo:</ion-label>
       <ion-select [(ngModel)]="ordem.veiculo" placeholder="Selecione o veiculo"
-        [compareWith]="compareWithVeiculo" name="veiculo" >
+        [compareWith]="compareWith" name="veiculo" >
         <ion-select-option *ngFor="let veiculo of veiculos" [value]="veiculo">
           {{veiculo.descricao}}
         </ion-select-option>
@@ -38,7 +38,7 @@
     <ion-item>
       <ion-label>Mecânico:</ion-label>
       <ion-select [(ngModel)]="ordem.mecanico" placeholder="Selecione o mecanico"
-        [compareWith]="compareWithMecanico" name="mecanico" >
+        [compareWith]="compareWith" name="mecanico" >
         <ion-select-option *ngFor="let mecanico of mecanicos" [value]="mecanico">
           {{mecanico.nome}}
         </ion-select-option>
@@ -48,7 +48,7 @@
     <ion-item>
       <ion-label>Peça(s):</ion-label>
       <ion-select [(ngModel)]="ordem.pecas" multiple="true" placeholder="Selecione a(s) peça(s)"
-        [compareWith]="compareWithPeca" name="peca">
+        [compareWith]="compareWith" name="peca">
         <ion-select-option *ngFor="let peca of pecas" [value]="peca">
           {{peca.descricao}}
         </ion-select-option>
@@ -58,7 +58,7 @@
     <ion-item>
       <ion-label>Serviço(s):</ion-label>
       <ion-select [(ngModel)]="ordem.servicos" multiple="true" placeholder="Selecione o(s) serviço(s)"
-      [compareWith]="compareWithServico" name="servico" >
+      [compareWith]="compareWith" name="servico" >
         <ion-select-option *ngFor="let servico of servicos" [value]="servico">
           {{servico.descricao}}
         </ion-select-option>

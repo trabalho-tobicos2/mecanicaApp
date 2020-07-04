@@ -7,7 +7,9 @@ import { Peca } from '../models/peca.interface';
 })
 export class PecaService {
 
-  private URI = 'http://localhost:3000/pecas';
+  // JSON Server private URI = 'http://localhost:3000/pecas';
+  private URI = 'http://localhost:8080/api-mecanica/resources/pecas';
+
 
   constructor(
     private httpClient : HttpClient

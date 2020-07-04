@@ -5,5 +5,5 @@ export interface Peca {
     marca: string;
     cor: string;
     preco: number;
-    imagem: string;
+    imagemUrl: string;
 }

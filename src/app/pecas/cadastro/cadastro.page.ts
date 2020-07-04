@@ -19,7 +19,7 @@ export class CadastroPage implements OnInit {
     private navController : NavController,
     private loadingController : LoadingController
   ) { 
-    this.peca = { descricao: '', tipo: '', marca: '', cor: '', preco: null, imagem: ''};
+    this.peca = { descricao: '', tipo: '', marca: '', cor: '', preco: null, imagemUrl: ''};
   }
 
   async ngOnInit() {

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Mecanico } from '../models/mecanico.interface';
+import { BASE_API } from "./base-api";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MecanicoService {
 
-  private URI = 'http://localhost:3000/mecanicos';
+  private URI = BASE_API + 'mecanicos';
 
   constructor(
     private httpClient : HttpClient

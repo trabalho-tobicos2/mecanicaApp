@@ -31,6 +31,7 @@ export class CadastroPage implements OnInit {
   mecanicos: Mecanico[];
   pecas: Peca[];
   servicos: Servico[];
+  totalPeca: number;
 
   constructor(
     private clienteService: ClienteService,
@@ -67,6 +68,31 @@ export class CadastroPage implements OnInit {
     this.listarServicos();
     this.carregarOrdem();
   }
+/*
+calculaPecas(){
+  let x = (<HTMLInputElement>document.getElementById("pecas")).value;
+  console.log(x[0].preco)
+  let soma = 0;
+  for (let i = 0; i < x.length; i++) {
+    soma= soma + x[i].preco;
+    console.log(soma)
+  }
+  this.totalPeca = soma
+  return this.totalPeca
+}
+
+  calculaPecass(){
+    var totalPeca = 0;
+    var pc = document.querySelectorAll("#pecas")
+    //console.log(pc.item(0).value)
+    var l = pc.length;
+    for (let index = 0; index < pc.length; index++) {
+      const element = pc[index];
+      //console.log(element)
+      console.log(pc.item(index).value[index].preco)
+    }
+  }
+*/
 
   async listarClientes() {
     this.clienteService.getClientes().subscribe((clientes) => {

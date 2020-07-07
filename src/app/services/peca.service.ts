@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Peca } from '../models/peca.interface';
+import { BASE_API } from "./base-api";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PecaService {
 
-  // JSON Server private URI = 'http://localhost:3000/pecas';
-  private URI = 'http://localhost:8080/api-mecanica/resources/pecas';
-
+  private URI = BASE_API + 'pecas';
 
   constructor(
     private httpClient : HttpClient

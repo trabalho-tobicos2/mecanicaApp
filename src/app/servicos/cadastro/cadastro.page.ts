@@ -23,7 +23,7 @@ export class CadastroPage implements OnInit {
   }
 
   async ngOnInit() {
-    const id = parseInt(this.activatedRoute.snapshot.params['id']);       
+    const id = this.activatedRoute.snapshot.params['id'];       
     if(id) {
       // Carregar informações
       const loading = await this.loadingController.create({message: 'Carregando'});

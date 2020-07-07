@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ordem } from '../models/ordem.interface';
+import { BASE_API } from "./base-api";
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdemService {
 
-  private URI = 'http://localhost:3000/ordens';
+  private URI = BASE_API + 'ordens';
 
   constructor(
     private httpClient : HttpClient

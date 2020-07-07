@@ -1,6 +1,7 @@
 import { Veiculo } from './../models/veiculo.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BASE_API } from "./base-api";
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class VeiculoService {
-  private URI = 'http://localhost:3000/veiculos';
+  private URI = BASE_API + 'veiculos';
 
   constructor(
     private httpClient:HttpClient

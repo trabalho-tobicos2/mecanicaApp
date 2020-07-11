@@ -14,30 +14,30 @@ export class CadastroPage implements OnInit {
   cliente: Cliente;
 
   constructor(
-    private clienteService : ClienteService,
-    private activatedRoute : ActivatedRoute,
-    private navController : NavController,
-    private loadingController : LoadingController
-  ) { 
-    this.cliente = { nome: '', cpf: '', endereco: '', telefone: '', celular: '' , imagem: ''};
+    private clienteService: ClienteService,
+    private activatedRoute: ActivatedRoute,
+    private navController: NavController,
+    private loadingController: LoadingController
+  ) {
+    this.cliente = { nome: '', cpf: '', endereco: '', telefone: '', celular: '', imagem: '' };
   }
 
-  async ngOnInit() {  
-    const id = this.activatedRoute.snapshot.params['id'];       
-    if(id) {
+  async ngOnInit() {
+    const id = this.activatedRoute.snapshot.params['id'];
+    if (id) {
       // Carregar informações
-      const loading = await this.loadingController.create({message: 'Carregando'});
+      const loading = await this.loadingController.create({ message: 'Carregando' });
       loading.present();
       this.clienteService.getCliente(id).subscribe((cliente) => {
         this.cliente = cliente;
         loading.dismiss();
       });
-    } 
+    }
   }
 
 
   async salvar() {
-    let loading = await this.loadingController.create({message: 'Salvando'});
+    let loading = await this.loadingController.create({ message: 'Salvando' });
     loading.present();
 
     this.clienteService
@@ -46,6 +46,42 @@ export class CadastroPage implements OnInit {
         loading.dismiss();
         this.navController.navigateForward(['/clientes']);
       });
+  }
+
+  maskCpf(event) {
+    let valorInput = event.detail.value;
+    if (valorInput.length === 3) {
+      valorInput += '.'
+    } else if (valorInput.length === 7) {
+      valorInput += '.'
+    } else if (valorInput.length === 11) {
+      valorInput += '-'
+    }
+    this.cliente.cpf = valorInput;
+  }
+
+  maskTel(event) {
+    let valorInput = event.detail.value;
+    if (valorInput.length === 1) {
+      valorInput = '(' + valorInput
+    } else if (valorInput.length === 3) {
+      valorInput += ') '
+    } else if (valorInput.length === 9) {
+      valorInput += '-'
+    }
+    this.cliente.telefone = valorInput;
+  }
+
+  maskCel(event) {
+    let valorInput = event.detail.value;
+    if (valorInput.length === 1) {
+      valorInput = '(' + valorInput
+    } else if (valorInput.length === 3) {
+      valorInput += ') '
+    } else if (valorInput.length === 10) {
+      valorInput += '-'
+    }
+    this.cliente.celular = valorInput;
   }
 
 }

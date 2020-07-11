@@ -6,5 +6,5 @@ export interface Veiculo {
     marca: string;
     cor: string;
     modelo: string;
-    Combustivel: string
+    combustivel: string
 }

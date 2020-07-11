@@ -18,11 +18,11 @@ export class CadastroPage implements OnInit {
     private navController : NavController,
     private loadingController : LoadingController
   ) { 
-    this.veiculo ={descricao:'', placa:'',renavan:'', marca:'',cor:'', modelo:'',Combustivel:''}
+    this.veiculo ={descricao:'', placa:'',renavan:'', marca:'',cor:'', modelo:'',combustivel:''}
   }
 
   async ngOnInit() {
-    const id = parseInt(this.activatedRoute.snapshot.params['id']);
+    const id = this.activatedRoute.snapshot.params['id'];
     if(id){
       const loading = await this.loadingController.create({message: 'Carregando'});
       loading.present();

@@ -48,7 +48,7 @@
     <ion-item>
       <ion-label>Peça(s):</ion-label>
       <ion-select [(ngModel)]="ordem.pecas" multiple="true" placeholder="Selecione a(s) peça(s)"
-        [compareWith]="compareWith" name="peca">
+        [compareWith]="compareWith" name="peca" id="pecas" (ionChange)="calculaPecas($event)">
         <ion-select-option *ngFor="let peca of pecas" [value]="peca">
           {{peca.descricao}}
         </ion-select-option>
@@ -58,7 +58,7 @@
     <ion-item>
       <ion-label>Serviço(s):</ion-label>
       <ion-select [(ngModel)]="ordem.servicos" multiple="true" placeholder="Selecione o(s) serviço(s)"
-      [compareWith]="compareWith" name="servico" >
+      [compareWith]="compareWith" name="servico" id="servicos" (ionChange)="calculaServicos($event)">
         <ion-select-option *ngFor="let servico of servicos" [value]="servico">
           {{servico.descricao}}
         </ion-select-option>
@@ -67,23 +67,23 @@
 
     <ion-item>
       <ion-label position="floating">Total serviço: </ion-label>
-      <ion-input #totalServico="ngModel" type="number"  [(ngModel)]="ordem.totalServico" name="totalServico" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
+      <ion-input #totalServico="ngModel" type="number" [(ngModel)]="ordem.totalServico" name="totalServico" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Total Peça: </ion-label>
-      <ion-input #totalPeca="ngModel" type="number"  [(ngModel)]="ordem.totalPeca" name="totalPeca" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
+      <ion-input #totalPeca="ngModel" type="number" [(ngModel)]="ordem.totalPeca" [value]="totalPeca" name="totalPeca" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Desconto: </ion-label>
-      <ion-input #desconto="ngModel" type="number" [(ngModel)]="ordem.desconto" name="desconto" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
+      <ion-input #desconto="ngModel" type="number" [(ngModel)]="ordem.desconto" (ionChange)="calculaDesconto($event)" name="desconto" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Total Bruto: </ion-label>
-      <ion-input #bruto="ngModel" type="number"  [(ngModel)]="ordem.totalBruto" name="bruto" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
+      <ion-input #bruto="ngModel" type="number" [(ngModel)]="ordem.totalBruto" name="bruto" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Total Líquido: </ion-label>
-      <ion-input #liquido="ngModel" type="number"  [(ngModel)]="ordem.totalLiquido" name="liquido" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
+      <ion-input #totalLiquido="ngModel" type="number" [(ngModel)]="ordem.totalLiquido" name="liquido" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
     </ion-item>
 
 

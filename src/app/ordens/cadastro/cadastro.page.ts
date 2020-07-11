@@ -68,31 +68,43 @@ export class CadastroPage implements OnInit {
     this.listarServicos();
     this.carregarOrdem();
   }
-/*
-calculaPecas(){
-  let x = (<HTMLInputElement>document.getElementById("pecas")).value;
-  console.log(x[0].preco)
-  let soma = 0;
-  for (let i = 0; i < x.length; i++) {
-    soma= soma + x[i].preco;
-    console.log(soma)
-  }
-  this.totalPeca = soma
-  return this.totalPeca
-}
 
-  calculaPecass(){
-    var totalPeca = 0;
-    var pc = document.querySelectorAll("#pecas")
-    //console.log(pc.item(0).value)
-    var l = pc.length;
-    for (let index = 0; index < pc.length; index++) {
-      const element = pc[index];
-      //console.log(element)
-      console.log(pc.item(index).value[index].preco)
+  calculaPecas(event) {
+    let valorInput = event.detail.value;
+    let soma = 0;
+    for (let i = 0; i < valorInput.length; i++) {
+      soma = soma + valorInput[i].preco;
     }
+    this.ordem.totalPeca = soma;
+    this.calcular();
   }
-*/
+
+  calculaServicos(event) {
+    let valorInput = event.detail.value;
+    let soma = 0;
+    for (let i = 0; i < valorInput.length; i++) {
+      soma = soma + valorInput[i].preco;
+    }
+    this.ordem.totalServico = soma;
+    this.calcular();
+  }
+
+  calculaDesconto(event) {
+    this.ordem.desconto = event.detail.value;
+    this.calculaValorLiquido();
+  }
+
+  calcular(){
+    this.calculaValorBruto();
+    this.calculaValorLiquido();
+  }
+
+  calculaValorBruto() {
+    this.ordem.totalBruto = this.ordem.totalPeca + this.ordem.totalServico;
+  }
+  calculaValorLiquido() {
+    this.ordem.totalLiquido = this.ordem.totalBruto - this.ordem.desconto;
+  }
 
   async listarClientes() {
     this.clienteService.getClientes().subscribe((clientes) => {
@@ -119,7 +131,7 @@ calculaPecas(){
   }
 
   async listarServicos() {
-     this.servicoService.getServicos().subscribe((servicos) => {
+    this.servicoService.getServicos().subscribe((servicos) => {
       this.servicos = servicos;
     });
   }
@@ -138,7 +150,7 @@ calculaPecas(){
   }
 
   async salvar() {
-    let loading = await this.loadingController.create({message: 'Salvando'});
+    let loading = await this.loadingController.create({ message: 'Salvando' });
     loading.present();
 
     this.ordemService

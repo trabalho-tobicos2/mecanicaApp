@@ -23,6 +23,7 @@ import { Mecanico } from 'src/app/models/mecanico.interface';
 export class CadastroPage implements OnInit {
 
   ordem: Ordem;
+  data: Date;
   cliente: Cliente;
   clientes: Cliente[];
   veiculo: Veiculo;
@@ -103,7 +104,8 @@ export class CadastroPage implements OnInit {
     this.ordem.totalBruto = this.ordem.totalPeca + this.ordem.totalServico;
   }
   calculaValorLiquido() {
-    this.ordem.totalLiquido = this.ordem.totalBruto - this.ordem.desconto;
+    var result = this.ordem.totalBruto - this.ordem.desconto;
+    this.ordem.totalLiquido = parseFloat(result.toFixed(2));
   }
 
   async listarClientes() {

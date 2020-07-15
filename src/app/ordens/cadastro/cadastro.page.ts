@@ -164,6 +164,8 @@ export class CadastroPage implements OnInit {
       .subscribe(() => {
         loading.dismiss();
         this.navController.navigateForward(['/ordens']);
+      }, () => {
+        loading.dismiss();
       });
   }
 

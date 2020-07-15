@@ -45,6 +45,8 @@ export class CadastroPage implements OnInit {
       .subscribe(() => {
         loading.dismiss();
         this.navController.navigateForward(['/clientes']);
+      }, () => {
+        loading.dismiss();
       });
   }
 

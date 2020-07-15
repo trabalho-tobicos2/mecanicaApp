@@ -95,6 +95,10 @@ export class CadastroPage implements OnInit {
     this.calculaValorLiquido();
   }
 
+  validaDesconto(event) {
+    return (this.ordem.totalLiquido < 0)
+  }
+
   calcular(){
     this.calculaValorBruto();
     this.calculaValorLiquido();

@@ -76,6 +76,13 @@
     <ion-item>
       <ion-label position="floating">Desconto: </ion-label>
       <ion-input #desconto="ngModel" type="number" [(ngModel)]="ordem.desconto" (ionChange)="calculaDesconto($event)" name="desconto" min="0" pattern="[0-9]+\.?[0-9]*"></ion-input>
+      <ion-text color="danger" *ngIf="validaDesconto()">
+        <small>
+          <span *ngIf="validaDesconto()">
+            Valor final não pode ser negativo
+          </span>
+         </small>
+      </ion-text>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Total Bruto: </ion-label>
@@ -88,7 +95,7 @@
 
 
     <ion-fab vertical="bottom" horizontal="end">
-      <ion-fab-button (click)="salvar()" [disabled]="ordemForm.invalid">
+      <ion-fab-button (click)="salvar()" [disabled]="ordemForm.invalid || validaDesconto()">
         <ion-icon name="checkmark-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab>
